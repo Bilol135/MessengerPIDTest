@@ -1,6 +1,7 @@
 package frc.robot.commands;
 import edu.wpi.first.wpilibj2.command.Command;
 import frc.robot.subsystems.Shooter;
+import frc.robot.Constants.ShooterConstants;
 
 public class PrepareLaunch extends Command{
     Shooter shooter;
@@ -17,7 +18,7 @@ public class PrepareLaunch extends Command{
     @Override
     public void initialize() {
         // Set shooter to speed
-        shooter.setShooter(1);
+        shooter.setShooter(kshooterShootSpeed);
     }
 
   // Called every time the scheduler runs while the command is scheduled.

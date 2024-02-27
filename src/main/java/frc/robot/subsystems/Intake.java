@@ -10,6 +10,7 @@ import com.revrobotics.CANSparkLowLevel.MotorType;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
+import frc.robot.Constants.IntakeConstants;
 
 public class Intake extends SubsystemBase {
     private final CANSparkMax intake;
@@ -20,8 +21,8 @@ public class Intake extends SubsystemBase {
     private double setpoint = 0;
 
     public Intake() {
-        intake = new CANSparkMax(9, MotorType.kBrushless);
-        pivot = new CANSparkMax(10, MotorType.kBrushless);
+        intake = new CANSparkMax(kintakeMotorID, MotorType.kBrushless);
+        pivot = new CANSparkMax(kintakepivotMotorID, MotorType.kBrushless);
 
         intake.restoreFactoryDefaults();
         pivot.restoreFactoryDefaults();

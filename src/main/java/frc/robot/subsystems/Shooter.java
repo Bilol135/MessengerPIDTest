@@ -3,7 +3,7 @@ package frc.robot.subsystems;
 import com.revrobotics.CANSparkMax;
 import com.revrobotics.CANSparkBase.IdleMode;
 import com.revrobotics.CANSparkLowLevel.MotorType;
-
+import frc.robot.Constants.ShooterConstants;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
@@ -11,17 +11,17 @@ public class Shooter extends SubsystemBase {
     private final CANSparkMax pivot, indexer, shooter;
 
     public Shooter() {
-        pivot = new CANSparkMax(11, MotorType.kBrushless);
-        indexer = new CANSparkMax(12, MotorType.kBrushless);
-        shooter = new CANSparkMax(13, MotorType.kBrushless);
+        pivot = new CANSparkMax(kshooterpivotMotordID, MotorType.kBrushless);
+        indexer = new CANSparkMax(kshooterindexerMotordID, MotorType.kBrushless);
+        shooter = new CANSparkMax(kshooterMotordID, MotorType.kBrushless);
 
         pivot.restoreFactoryDefaults();
         indexer.restoreFactoryDefaults();
         shooter.restoreFactoryDefaults();
 
-        pivot.setSmartCurrentLimit(50);
-        indexer.setSmartCurrentLimit(20);
-        shooter.setSmartCurrentLimit(50);
+        pivot.setSmartCurrentLimit(kpivotCurrentLimit);
+        indexer.setSmartCurrentLimit(kindexerCurrentLimit);
+        shooter.setSmartCurrentLimit(kshooterCurrentLimit);
 
         pivot.setIdleMode(IdleMode.kBrake);
         indexer.setIdleMode(IdleMode.kBrake);
