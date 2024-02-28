@@ -11,13 +11,12 @@ import frc.robot.subsystems.Intake;
 import frc.robot.subsystems.Shooter;
 import frc.robot.commands.PrepareLaunch;
 import frc.robot.commands.LaunchNote;
-import frc.robot.Constants.*;
 
 public class RobotContainer {
     private final Intake intake = new Intake();
     private final Shooter shooter = new Shooter();
     
-    CommandXboxController controller = new CommandXboxController(gamepadPort);
+    CommandXboxController controller = new CommandXboxController(Constants.gamepadPort);
 
     public RobotContainer() {
         configureBindings();

@@ -1,7 +1,7 @@
 package frc.robot.commands;
 import edu.wpi.first.wpilibj2.command.Command;
 import frc.robot.subsystems.Shooter;
-
+import frc.robot.Constants.ShooterConstants;
 
 public class LaunchNote extends Command{
     Shooter shooter;
@@ -17,7 +17,7 @@ public class LaunchNote extends Command{
       @Override
       public void initialize() {
         // Set indexer to speed
-        shooter.setIndexer(-0.5);
+        shooter.setIndexer(ShooterConstants.kindexerIntakeSpeed);
       }
     
       // Called every time the scheduler runs while the command is scheduled.

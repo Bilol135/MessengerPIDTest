@@ -17,9 +17,9 @@ public class Constants {
         public static final int kshooterCurrentLimit = 50; 
     //motor speed
         public static final int kshooterShootSpeed = 1; 
-        public static final int kindexerIntakeSpeed = -0.5; //reversed because motor placed on the inside
-        public static final int kpivotUpSpeed = -0.5; //reversed because motor placed on the inside
-        public static final int kpivotDownSpeed = 0.5;
+        public static final double kindexerIntakeSpeed = -0.5; //reversed because motor placed on the inside
+        public static final double kpivotUpSpeed = -0.5; //reversed because motor placed on the inside
+        public static final double kpivotDownSpeed = 0.5;
     }
 
     //intake constants

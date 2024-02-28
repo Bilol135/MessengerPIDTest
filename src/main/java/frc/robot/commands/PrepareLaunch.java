@@ -18,7 +18,7 @@ public class PrepareLaunch extends Command{
     @Override
     public void initialize() {
         // Set shooter to speed
-        shooter.setShooter(kshooterShootSpeed);
+        shooter.setShooter(ShooterConstants.kshooterShootSpeed);
     }
 
   // Called every time the scheduler runs while the command is scheduled.

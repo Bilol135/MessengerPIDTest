@@ -11,17 +11,17 @@ public class Shooter extends SubsystemBase {
     private final CANSparkMax pivot, indexer, shooter;
 
     public Shooter() {
-        pivot = new CANSparkMax(kshooterpivotMotordID, MotorType.kBrushless);
-        indexer = new CANSparkMax(kshooterindexerMotordID, MotorType.kBrushless);
-        shooter = new CANSparkMax(kshooterMotordID, MotorType.kBrushless);
+        pivot = new CANSparkMax(ShooterConstants.kshooterpivotMotordID, MotorType.kBrushless);
+        indexer = new CANSparkMax(ShooterConstants.kshooterindexerMotordID, MotorType.kBrushless);
+        shooter = new CANSparkMax(ShooterConstants.kshooterMotordID, MotorType.kBrushless);
 
         pivot.restoreFactoryDefaults();
         indexer.restoreFactoryDefaults();
         shooter.restoreFactoryDefaults();
 
-        pivot.setSmartCurrentLimit(kpivotCurrentLimit);
-        indexer.setSmartCurrentLimit(kindexerCurrentLimit);
-        shooter.setSmartCurrentLimit(kshooterCurrentLimit);
+        pivot.setSmartCurrentLimit(ShooterConstants.kpivotCurrentLimit);
+        indexer.setSmartCurrentLimit(ShooterConstants.kindexerCurrentLimit);
+        shooter.setSmartCurrentLimit(ShooterConstants.kshooterCurrentLimit);
 
         pivot.setIdleMode(IdleMode.kBrake);
         indexer.setIdleMode(IdleMode.kBrake);

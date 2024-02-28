@@ -21,8 +21,8 @@ public class Intake extends SubsystemBase {
     private double setpoint = 0;
 
     public Intake() {
-        intake = new CANSparkMax(kintakeMotorID, MotorType.kBrushless);
-        pivot = new CANSparkMax(kintakepivotMotorID, MotorType.kBrushless);
+        intake = new CANSparkMax(IntakeConstants.kintakeMotorID, MotorType.kBrushless);
+        pivot = new CANSparkMax(IntakeConstants.kintakepivotMotorID, MotorType.kBrushless);
 
         intake.restoreFactoryDefaults();
         pivot.restoreFactoryDefaults();
