@@ -28,4 +28,15 @@ public class Constants {
         public static final int kintakeMotorID = 9;
         public static final int kintakepivotMotorID = 10;
     }
+
+    //climber constants
+    public static final class ClimberConstants {
+    //spark max ID
+        public static final int kleftclimberMotorID = 14;
+        public static final int krightclimberMotorID = 15;
+    //motor speed
+        public static final double kclimberSpeed = 0.5;
+    //maximum current
+        public static final int kclimberCurrentLimit = 50;
+    }
 }

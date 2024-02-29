@@ -9,12 +9,16 @@ import edu.wpi.first.wpilibj2.command.Commands;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import frc.robot.subsystems.Intake;
 import frc.robot.subsystems.Shooter;
+import frc.robot.subsystems.Climber;
 import frc.robot.commands.PrepareLaunch;
 import frc.robot.commands.LaunchNote;
+import frc.robot.commands.ClimberExtend;
+import frc.robot.commands.ClimberRetract;
 
 public class RobotContainer {
     private final Intake intake = new Intake();
     private final Shooter shooter = new Shooter();
+    private final Climber climber = new Climber();
     
     CommandXboxController controller = new CommandXboxController(Constants.gamepadPort);
 
@@ -37,6 +41,8 @@ public class RobotContainer {
 
         controller.a().whileTrue(shooter.indexerIn());
         controller.b().whileTrue(shooter.indexerOut());
+
+        
     }
 
     public Command getAutonomousCommand() {
