@@ -29,18 +29,18 @@ public class RobotContainer {
     private void configureBindings() {
         controller.leftBumper().whileTrue(intake.intakeNote());
         controller.rightBumper().whileTrue(intake.releaseNote());
-        controller.leftTrigger().whileTrue(intake.goToGround());
-        controller.rightTrigger().whileTrue(intake.goToHandOff());
+        controller.y().whileTrue(intake.goToGround());
+        controller.a().whileTrue(intake.goToHandOff());
 
-        controller.y().whileTrue(
+        controller.b().whileTrue(
              new PrepareLaunch(shooter)
-                .withTimeout(1)
+                .withTimeout(0.5)
                 .andThen(new LaunchNote(shooter))
                 .handleInterrupt(() -> shooter.stop())
         );
 
-        controller.a().whileTrue(shooter.indexerIn());
-        controller.b().whileTrue(shooter.indexerOut());
+        // controller.a().whileTrue(shooter.indexerIn());
+        // controller.b().whileTrue(shooter.indexerOut());
 
         
     }
